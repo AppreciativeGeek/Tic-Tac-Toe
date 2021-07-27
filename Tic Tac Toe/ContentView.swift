@@ -10,19 +10,21 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            // Title Text
             Text("Tic Tac Toe")
                 .font(.title)
                 .bold()
                 .padding()
+            // LazyVGrid, stores the tic tac toe board.
             LazyVGrid(columns: Array(repeating: GridItem(.fixed(120), spacing: 15), count: 3), spacing: 15, content: {
+                // For loop that displays each grid on the tic tac toe board.
                 ForEach(0 ..< 9) { index in
                     ZStack {
                         Color.blue
                             .frame(width: 120, height: 120, alignment: .center)
                             .cornerRadius(30)
-                        Text("X")
-                            .font(.system(size: 90))
-                            .fontWeight(.heavy)
+                        Image(systemName: "multiply")
+                            .font(.system(size: 90, weight: .bold))
                     }
                     .frame(width: 120, height: 120, alignment: .center)
                     .cornerRadius(30)
