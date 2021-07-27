@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var moves = Array(repeating: "", count: 9)
+    
     var body: some View {
         VStack {
             // Title Text
@@ -23,11 +25,14 @@ struct ContentView: View {
                         Color.blue
                             .frame(width: 120, height: 120, alignment: .center)
                             .cornerRadius(30)
-                        Image(systemName: "multiply")
+                        Image(systemName: moves[index])
                             .font(.system(size: 90, weight: .bold))
                     }
                     .frame(width: 120, height: 120, alignment: .center)
                     .cornerRadius(30)
+                    .onTapGesture {
+                        moves[index] = "multiply"
+                    }
                 }
             })
         }
