@@ -73,6 +73,10 @@ struct ContentView: View {
         checkLine(a: 2, b: 5, c: 8)
         checkLine(a: 0, b: 4, c: 8)
         checkLine(a: 2, b: 4, c: 6)
+        if !(gameOver || moves.contains("")) {
+            winMessage = "Cat's Game"
+            gameOver = true
+        }
     }
     
     private func checkLine(a: Int, b: Int, c: Int) {
